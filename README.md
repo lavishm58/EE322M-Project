@@ -12,7 +12,7 @@ Decision tree learning is a supervised machine learning approach that uses a dec
 to conclusion about item's target class (leaves) . Trees provides high accuracy, stability and ease of interpretation in classification problems. 
 An example of a simple decision tree is shown by the following image.
 <p align="center">
-	<img src="https://github.com/luffy1996/EE322M-Project/blob/master/image/Decision_Tree_2.png" width="350"/>
+	<img src="https://github.com/luffy1996/EE322M-Project/blob/master/image/Decision_Tree_2.png"/>
 </p>
 A major question that comes in mind is how does a tree decide where to split. Decision tree uses multiple algorithms to decide the split in the
 decision node. Commonly used algorithm in the decision tress measures Gini index, Chi-Square, Information gain or Reduction in Variance to decide 
