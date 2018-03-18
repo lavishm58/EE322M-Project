@@ -1,5 +1,5 @@
 # Fast hierarchical clustering to Arrange Data
-Rohan Raj (150107048) & Lavish Maheswari (150107048)
+Rohan Raj (150107048) & Lavish Maheswari (150122021)
 ### Abstract
 Clustering is widely used in unsupervised machine learning to separate data. Hierarchical clustering
 is a method which seeks to build a hierarchy of clusters in the data. However, this is a slow algorithm with a 
