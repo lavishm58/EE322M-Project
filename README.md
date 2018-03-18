@@ -10,4 +10,17 @@ for binary separation of data at nodes of decision tree.
 
 Decision tree learning is a supervised machine learning approach that uses a decision tree to go from decision on observation values(branches)
 to conclusion about item's target class (leaves) . Trees provides high accuracy, stability and ease of interpretation in classification problems. 
+An example of a simple decision tree is shown by the following image.
+<p align="center">
 ![alt text](https://github.com/luffy1996/EE322M-Project/blob/master/image/Decision_Tree_2.png)
+</p>
+A major question that comes in mind is how does a tree decide where to split. Decision tree uses multiple algorithms to decide the split in the
+decision node. Commonly used algorithm in the decision tress measures Gini index, Chi-Square, Information gain or Reduction in Variance to decide 
+the split in the decision node. However all of these algorithms have high time complexity. 	In this project we would like to extend hierarchical clustering
+to decision tress for fast arrangement of data.
+
+### Related Work
+
+In computer vision , Otsu's method does clustering using thresold on one dimentional data. This algorithm is very fast and is widely used 
+for reduction of a graylevel image to a binary image . This method is approximately a 1-D discrete analog of FDA( Fisher's Discriminant Analysis). However this
+method works well with 1-D data. An extesion of this method to multi dimentional data is the focus of study in this project.
