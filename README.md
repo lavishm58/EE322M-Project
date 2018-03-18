@@ -1,1 +1,1 @@
-## Fast unsupervised hierarchical clustering to Arrange Data
+## Fast hierarchical clustering to Arrange Data
