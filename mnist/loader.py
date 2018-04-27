@@ -55,10 +55,17 @@ class MNIST(object):
             image_data = array("B", file.read())
 
         images = []
+
+        for i in range(size):
+            images.append([0]*rows*cols)
+
+        for i in range(size):
+
         for i in xrange(size):
             images.append([0]*rows*cols)
 
         for i in xrange(size):
+
             images[i][:] = image_data[i*rows*cols : (i+1)*rows*cols]
 
         return images, labels
@@ -70,10 +77,12 @@ class MNIST(object):
         assert len(test_img) == 10000
         assert len(train_img) == len(train_label)
         assert len(train_img) == 60000
-        print 'Showing num:%d' % train_label[0]
-        print self.display(train_img[0])
-        print
-        return True
+        print('Showing num:%d' % train_label[0])
+        #print(self.display(train_img[0]))
+        # print(train_img[0])
+        # print(len(train_img[0]))
+        return train_img,train_label,test_img,test_label
+
 
     @classmethod
     def display(cls, img, width=28):
@@ -87,7 +96,30 @@ class MNIST(object):
         return render
 
 if __name__ == "__main__":
-    print 'Testing'
-    mn = MNIST('.')
-    if mn.test():
-        print 'Passed'
+
+    print('Testing')
+    mn = MNIST('/home/lavish/Documents/EE322M-Project-master/Datasets/')
+    train_img,train_label,test_img,test_label = mn.test()
+    print(train_label[0])
+    nwfile = open('data.arff','w')
+    nwfile.write('@relation D'+str(len(train_img[0]))+'\n')
+    for i in range(len(train_img[0])):
+        nwfile.write('@attribute dim'+str(i)+' real'+'\n')
+    nwfile.write('@attribute class {')
+    for i in range(10):
+        if(i!=9):
+            nwfile.write(str(i)+',')
+        else:
+            nwfile.write(str(i)+'}')
+    x=train_img[0]
+    
+    # print(a)
+    for i in range(len(train_img)):
+        a=','.join(str(float(x)) for x in train_img[i])
+        a=a+','+str(train_label[i])
+        nwfile.write(a+'\n')
+    # a=','.join(str(float(x)) for x in train_img[1])
+    # a=a+','+str(train_label[i])
+    # nwfile.write(a+'\n')
+    #     nwfile
+
