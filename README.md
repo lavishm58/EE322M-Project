@@ -25,23 +25,16 @@ low density of points
 
 ### Proposed Approach
 
-We use an example to show the intuition behind the proposed technique.
-Figure 1 gives a 2-dimensional space, which has 24 data (Y ) points rep-
-resented by filled rectangles. Two clusters exist in the space. We then add
-some uniformly distributed N points (represented by ”o”) to the data space
-(Figure 2). With the augmented dataset, we can run a decision tree algo-
-rithm to obtain a partitioning of the space (Figure 1(B)). The two clusters
-are identified.
 The reason that this technique works is that if there are clusters in the
 data, the data points cannot be uniformly distributed in the entire space.By adding some uniformly distributed N points, we can isolate the clusters
 because within each cluster region there are more Y points than N points.
 The decision tree technique is well known for this task.
 
-1) how many N points should
-we add, and 
+1)  How many N points should we add, and 
 (2) Can the same task be performed without physically adding the
-N points to the data?The
-number changes as the tree grows. It is insufficient to add a fixed number of N
+    N points to the data?
+
+The number changes as the tree grows. It is insufficient to add a fixed number of N
 points to the original dataset at the beginning (see Section 2.2). The answer
 to the second question is yes. Physically adding N points increases the size
 of the dataset and also the running time.
@@ -66,7 +59,7 @@ gain(X) = inf o(D) − inf o X (D)
 
 IG : 
 <p align="center">
-	<img src="image/Figure_1.png"/>
+	<img src="image/IG.png"/>
 </p>
 
 ### Pruning 
