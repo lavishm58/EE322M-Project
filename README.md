@@ -35,7 +35,7 @@ The decision tree technique is well known for this task.
     N points to the data?
 
 The number changes as the tree grows. It is insufficient to add a fixed number of N
-points to the original dataset at the beginning (see Section 2.2). The answer
+points to the original dataset at the beginning. The answer
 to the second question is yes. Physically adding N points increases the size
 of the dataset and also the running time.
 
