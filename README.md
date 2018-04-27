@@ -57,11 +57,6 @@ inf o X (D)
 
 gain(X) = inf o(D) − inf o X (D) 
 
-IG : 
-<p align="center">
-	<img src="image/IG.png"/>
-</p>
-
 ### Pruning 
 There are basically two ways to produce simpler trees:
 
