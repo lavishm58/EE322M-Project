@@ -3,8 +3,6 @@ Rohan Raj (150107048) & Lavish Maheswari (150122021)
 ### Abstract
 Clustering is widely used in unsupervised machine learning to separate data.We will use a new  clustering technique, which is based on a supervised learning technique called decision tree construction.The main idea is to use a decision tree to partition the data space into cluster and sparse regions.First, new data points are introduced into the space and then a modified decision tree algorithm is applied.This method works well for large high dimensional
 spaces efficiently.
-time complexity of O(N <sup>3</sup> ). In this project our aim is to develope a fast clustering mechanism 
-for binary separation of data at nodes of decision tree.
 
 ### Introduction
 
@@ -17,6 +15,7 @@ A major question that comes in mind is how does a tree decide where to split. De
 decision node. Commonly used algorithm in the decision tress measures Gini index, Chi-Square, Information gain or Reduction in Variance to decide 
 the split in the decision node. However all of these algorithms have high time complexity. 	In this project we would like to extend hierarchical clustering
 to decision tress for fast arrangement of data.
+
 
 In this paper, we study clustering in a numerical space, where each di-mension (or attribute) has a bounded and totally ordered domain. Each data
 record is basically a point in the space. Clusters in such a space are commonly
@@ -203,7 +202,6 @@ dim1 max: 996.1926077111222 min: 2.6515474910964176
 dim2 max: 371.4783351842746 min: 256.6000878954098
 dim3 max: 997.5775264212 min: 935.2868246831398
 dim4 max: 785.2095547030349 min: 621.5252628692459
-
 
 ### Related Work
 
