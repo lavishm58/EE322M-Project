@@ -55,10 +55,17 @@ class MNIST(object):
             image_data = array("B", file.read())
 
         images = []
+
         for i in range(size):
             images.append([0]*rows*cols)
 
         for i in range(size):
+
+        for i in xrange(size):
+            images.append([0]*rows*cols)
+
+        for i in xrange(size):
+
             images[i][:] = image_data[i*rows*cols : (i+1)*rows*cols]
 
         return images, labels
@@ -76,6 +83,7 @@ class MNIST(object):
         # print(len(train_img[0]))
         return train_img,train_label,test_img,test_label
 
+
     @classmethod
     def display(cls, img, width=28):
         render = ''
@@ -88,6 +96,7 @@ class MNIST(object):
         return render
 
 if __name__ == "__main__":
+
     print('Testing')
     mn = MNIST('/home/lavish/Documents/EE322M-Project-master/Datasets/')
     train_img,train_label,test_img,test_label = mn.test()
