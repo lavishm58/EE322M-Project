@@ -40,57 +40,57 @@ The results are obtained with descriptions about the split of subset, number of
 misclassifications, relative density and the features responsible for cuts.
 
 Cluster 0
-Leaf node has label 5 with accuracy 92%
+Leaf node has label 5 with accuracy 92%<br />
 Cluster 1
-Leaf node has label 6 with accuracy 66%
+Leaf node has label 6 with accuracy 66%<br />
 Cluster 2
-Leaf node has label 5 with accuracy 65%
+Leaf node has label 5 with accuracy 65%<br />
 Cluster 3
-Leaf node has label 6 with accuracy 62%
+Leaf node has label 6 with accuracy 62%<br />
 Cluster 4
-Leaf node has label 5 with accuracy 56%
+Leaf node has label 5 with accuracy 56%<br />
 Cluster 5
-Leaf node has label 5 with accuracy 58%
+Leaf node has label 5 with accuracy 58%<br />
 Cluster 6
-Leaf node has label 6 with accuracy 58%
+Leaf node has label 6 with accuracy 58%<br />
 Cluster 7
-Leaf node has label 5 with accuracy 70%
+Leaf node has label 5 with accuracy 70%<br />
 Cluster 8
-Leaf node has label 5 with accuracy 91%
+Leaf node has label 5 with accuracy 91%<br />
 Cluster 9
-Leaf node has label 6 with accuracy 66%
+Leaf node has label 6 with accuracy 66%<br />
 Cluster 10
-Leaf node has label 6 with accuracy 51%
+Leaf node has label 6 with accuracy 51%<br />
 Cluster 11
-Leaf node has label 5 with accuracy 84%
+Leaf node has label 5 with accuracy 84%<br />
 Cluster 12
-Leaf node has label 5 with accuracy 100%
+Leaf node has label 5 with accuracy 100%<br />
 Cluster 13
-Leaf node has label 6 with accuracy 84%
+Leaf node has label 6 with accuracy 84%<br />
 Cluster 14
-Leaf node has label 6 with accuracy 85%
+Leaf node has label 6 with accuracy 85%<br />
 Cluster 15
-Leaf node has label 6 with accuracy 64%
+Leaf node has label 6 with accuracy 64%<br />
 Cluster 16
-Leaf node has label 5 with accuracy 93%
+Leaf node has label 5 with accuracy 93%<br />
 Cluster 17
-Leaf node has label 5 with accuracy 95%
+Leaf node has label 5 with accuracy 95%<br />
 Cluster 18
-Leaf node has label 6 with accuracy 93%
+Leaf node has label 6 with accuracy 93%<br />
 Cluster 19
-Leaf node has label 6 with accuracy 96%
+Leaf node has label 6 with accuracy 96%<br />
 Cluster 20
-Leaf node has label 6 with accuracy 100%
+Leaf node has label 6 with accuracy 100%<br />
 Cluster 21
-Leaf node has label 6 with accuracy 96%
+Leaf node has label 6 with accuracy 96%<br />
 Cluster 22
-Leaf node has label 5 with accuracy 54%
+Leaf node has label 5 with accuracy 54%<br />
 Cluster 23
-Leaf node has label 5 with accuracy 81%
+Leaf node has label 5 with accuracy 81%<br />
 Cluster 24
-Leaf node has label 5 with accuracy 51%
+Leaf node has label 5 with accuracy 51%<br />
 
-Average Total accuracy: 76.44%
+Average Total accuracy: 76.44%<br />
 
 ### References 
 
