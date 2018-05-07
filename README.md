@@ -1,4 +1,4 @@
-# Fast clustering Using Decision Tree
+# Fast clustering Using Binary Tree
 Rohan Raj (150107048) & Lavish Maheswari (150122021)
 ### Abstract
 Clustering is widely used in unsupervised machine learning to separate data.We will use a new  clustering technique, which is based on a supervised learning technique called binary tree construction.The main idea is to use binary clustering as split parameter for binary tree construction.The algorigthm works very well to igive intuitive description of every splitted node, hence not only end results of clustering are available but the previous nodes of clusters also from which the end results are derived. 
