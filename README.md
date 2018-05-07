@@ -1,158 +1,96 @@
 # Fast clustering Using Decision Tree
 Rohan Raj (150107048) & Lavish Maheswari (150122021)
 ### Abstract
-Clustering is widely used in unsupervised machine learning to separate data.We will use a new  clustering technique, which is based on a supervised learning technique called decision tree construction.The main idea is to use a decision tree to partition the data space into cluster and sparse regions.First, new data points are introduced into the space and then a modified decision tree algorithm is applied.This method works well for large high dimensional
-spaces efficiently.
-time complexity of O(N <sup>3</sup> ). In this project our aim is to develope a fast clustering mechanism for binary separation of data at nodes of decision tree.
+Clustering is widely used in unsupervised machine learning to separate data.We will use a new  clustering technique, which is based on a supervised learning technique called binary tree construction.The main idea is to use binary clustering as split parameter for binary tree construction.The algorigthm works very well to igive intuitive description of every splitted node, hence not only end results of clustering are available but the previous nodes of clusters also from which the end results are derived. 
+
 
 ### Introduction
 
-Decision tree learning is a supervised machine learning approach that uses a decision tree to go from decision on observation values(branches) to conclusion about item's target class (leaves) . Trees provides high accuracy, stability and ease of interpretation in classification problems. 
-An example of a simple decision tree is shown by the following image.
+A major question that comes in mind is how does a tree decide where to split. Decision tree uses multiple algorithms to decide the split in the decision node.The number of split is number of clusters (k) value provided.
+The splitting criteria can be many like used in Hierarchical clustering, mean shift clustering, DBSCAN or any other type of criteria like otsu's algorithm. 
 <p align="center">
 	<img src="image/Decision_Tree_2.png"/>
 </p>
-A major question that comes in mind is how does a tree decide where to split. Decision tree uses multiple algorithms to decide the split in the
-decision node. Commonly used algorithm in the decision tress measures Gini index, Chi-Square, Information gain or Reduction in Variance to decide 
-the split in the decision node. However all of these algorithms have high time complexity. 	In this project we would like to extend hierarchical clustering
-to decision tress for fast arrangement of data.
+ We have used a centroid comparison technique to decide label of a data point which is inspired by k-means 
+ clustering splitting idea.However all of these algorithms have high time complexity. 	In this project we would like to extend clustering to binary tress for fast arrangement of data.
 
-In this paper, we study clustering in a numerical space, where each di-mension (or attribute) has a bounded and totally ordered domain. Each data
-record is basically a point in the space. Clusters in such a space are commonly
-defined as connected regions in the space containing a relatively high density
-of points, separated from other such regions by a region containing a relatively
-low density of points
+Although, not very much work is done on clustering using decision tree.So, this is purely a new technique to 
+seperate similar data together and recursive splitting of clusters.
 
 ### Proposed Approach
 
-The reason that this technique works is that if there are clusters in the
-data, the data points cannot be uniformly distributed in the entire space.By adding some uniformly distributed N points, we can isolate the clusters
-because within each cluster region there are more Y points than N points.
-The decision tree technique is well known for this task.
+The normal binary tree format is followed if k=2 for clustering.Each node splits the data after getting  optimal centroid for every cluster which splits data to 2 clusters.This splitting is continued for the output clusters obtained from root node.
 
-1)  How many N points should we add, and 
-(2) Can the same task be performed without physically adding the
-    N points to the data?
+The stopping criteria is decided by threshold, if a particular node contains less than 
+N/20 training examples, it is considered as a leaf node which has majority of same labeled training data.
 
-The number changes as the tree grows. It is insufficient to add a fixed number of N
-points to the original dataset at the beginning. The answer
-to the second question is yes. Physically adding N points increases the size
-of the dataset and also the running time.
-
-The proposed CLTree technique consists of two steps:
-
-1) Cluster tree construction: This step uses a modified decision tree algorithm
-with a new purity function to construct a cluster tree to capture the
-natural distribution of the data without making any prior assumptions.
-
-2)Cluster tree pruning: After the tree is built, an interactive pruning step
-is performed to simplify the tree to find meaningful/useful clusters. The
-final clusters are expressed as a list of hyper-rectangular regions.
-
-### Split using Information gain
-The algorithm for building a decision tree typically uses the divide and
-conquer strategy to recursively partition the data to produce the tree.
-
-inf o X (D)
-
-gain(X) = inf o(D) − inf o X (D) 
-
-### Pruning 
-There are basically two ways to produce simpler trees:
-
-1. Stopping: deciding not to divide a region any further, or
-2. Pruning: removing some of the tree parts after the tree has been built.
-
-The user-defined two parameters used in pruning are as follows:
-min y - t specifies the minimal number of Y points that a region must
- 			contain
-min rd - Relative density to choose if two clusters should be combined
+This method is very useful not only getting end results of all same labelled data clusters but also intuitive
+description about clusters obtained in between leaf and root cluster, as algorithm can obtain accuracy of all
+the clusters.  
 
 ### Dataset 
 
-We have used a small dataset of size 804.
-The number of attributes are 5 and user defined labels are 12.
-with names {'100', '701', '101', '201', '200', '601', '501', '401', '300', '301', '302', '-1'}
+We have used a small dataset of size 777.
+The number of attributes are 16 and labels are 5 and 6.
+
 
 ### Results 
 
 The results are obtained with descriptions about the split of subset, number of
 misclassifications, relative density and the features responsible for cuts.
 
-With cluster Image : 
-<p align="center">
-	<img src="image/Figure_1.png"/>
-</p>
-Without cluster Image : 
-<p align="center">
-	<img src="image/Withoutcluster.png"/>
-</p>
-
 Cluster 0
-Node: 
-29 instances, 0 misclassified, 100% 701, 100 relative density 
-Cuts {'dim3', 'dim2', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 92%
 Cluster 1
-Node: 
-19 instances, 0 misclassified, 100% 301, 100 relative density 
-Cuts {'dim3', 'dim2', 'dim0', 'dim1'}
-
+Leaf node has label 6 with accuracy 66%
 Cluster 2
-Node: 
-22 instances, 0 misclassified, 100% 200, 100 relative density 
-Cuts {'dim3', 'dim2', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 65%
 Cluster 3
-Node: 
-22 instances, 0 misclassified, 100% 200, 100 relative density 
-Cuts {'dim3', 'dim2', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 6 with accuracy 62%
 Cluster 4
-Node: 
-19 instances, 0 misclassified, 100% 201, 32 relative density 
-Cuts {'dim3', 'dim2', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 56%
 Cluster 5
-Node: 
-19 instances, 0 misclassified, 100% 201, 59 relative density 
-Cuts {'dim3', 'dim2', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 58%
 Cluster 6
-Node: 
-17 instances, 1 misclassified, 94% 701, 100 relative density 
-Cuts {'dim0', 'dim4', 'dim2', 'dim3', 'dim1'}
-
+Leaf node has label 6 with accuracy 58%
 Cluster 7
-Node: 
-273 instances, 117 misclassified, 57% 100, 100 relative density 
-Cuts {'dim3', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 70%
 Cluster 8
-Node: 
-151 instances, 0 misclassified, 100% 501, 100 relative density 
-Cuts {'dim3', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 91%
 Cluster 9
-Node: 
-27 instances, 0 misclassified, 100% 601, 100 relative density 
-Cuts {'dim3', 'dim2', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 6 with accuracy 66%
 Cluster 10
-Node: 
-33 instances, 16 misclassified, 51% 302, 13 relative density 
-Cuts {'dim3', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 6 with accuracy 51%
 Cluster 11
-Node: 
-24 instances, 0 misclassified, 100% 301, 63 relative density 
-Cuts {'dim3', 'dim2', 'dim4', 'dim0', 'dim1'}
-
+Leaf node has label 5 with accuracy 84%
 Cluster 12
-Node: 
-149 instances, 1 misclassified, 99% 401, 100 relative density 
-Cuts {'dim3', 'dim4', 'dim0'}
+Leaf node has label 5 with accuracy 100%
+Cluster 13
+Leaf node has label 6 with accuracy 84%
+Cluster 14
+Leaf node has label 6 with accuracy 85%
+Cluster 15
+Leaf node has label 6 with accuracy 64%
+Cluster 16
+Leaf node has label 5 with accuracy 93%
+Cluster 17
+Leaf node has label 5 with accuracy 95%
+Cluster 18
+Leaf node has label 6 with accuracy 93%
+Cluster 19
+Leaf node has label 6 with accuracy 96%
+Cluster 20
+Leaf node has label 6 with accuracy 100%
+Cluster 21
+Leaf node has label 6 with accuracy 96%
+Cluster 22
+Leaf node has label 5 with accuracy 54%
+Cluster 23
+Leaf node has label 5 with accuracy 81%
+Cluster 24
+Leaf node has label 5 with accuracy 51%
 
+Average Total accuracy: 76.44%
 
 ### References 
 
